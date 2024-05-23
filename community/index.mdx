@@ -3,6 +3,27 @@ title: Community Projects
 slug: /community
 ---
 
+import yamlLoad from "@site/src/components/yamlLoad"
+import community_links from "!!raw-loader!@site/community/_links.yaml";
+
+import CodeBlock from '@theme/CodeBlock';
+
+export default function MyTable(links){
+
+    return (<table>
+        <thead>
+            <tr><td>heading</td></tr>
+        </thead>
+        <tbody>
+            <tr><td>{JSON.stringify(links.links.entries)}</td></tr>
+        </tbody>
+    </table>
+    );
+};
+
+<MyTable links={yamlLoad(community_links)} />
+
+
 We invite you to explore the many tutorials, blog posts, and projects created by the Overture Maps community. Want to build your own project? Get started [here](/getting-data).
 
 
